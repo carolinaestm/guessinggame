@@ -80,6 +80,18 @@ int main() {
   cout << "What do you want to do? " << endl;
   cin >> choice;
   //making choice a valid input for the enum
+  //making strings invalid
+  bool isInt = true;
+  if(isdigit(choice)){
+   isInt = true;
+    }
+     else{
+       cin.clear();
+       cin.ignore();
+       isInt = false;
+       cout << "Invalid input. Please enter a number." << endl;
+       cin >> choice;
+       }
   choice = static_cast<choiceNum>(choice);
   cout << "Your choice: " << choice << endl;
 
